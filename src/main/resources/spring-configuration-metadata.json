@@ -1,0 +1,85 @@
+{
+  "groups": [
+    {
+      "name": "fastdfs",
+      "type": "com.bluemiaomiao.properties.FastdfsProperties",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "connectTimeout",
+      "type": "java.lang.String",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties",
+      "defaultValue": "5"
+    },
+    {
+      "name": "networkTimeout",
+      "type": "java.lang.String",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties",
+      "defaultValue": "30"
+    },
+    {
+      "name": "charset",
+      "type": "java.lang.String",
+      "defaultValue": "UTF-8"
+    },
+    {
+      "name": "httpAntiStealToken",
+      "type": "java.lang.String",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties",
+      "defaultValue": "false"
+    },
+    {
+      "name": "httpSecretKey",
+      "type": "java.lang.String",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties"
+    },
+    {
+      "name": "httpTrackerHttpPort",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties"
+    },
+    {
+      "name": "trackerServers",
+      "type": "java.lang.String",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties"
+    },
+    {
+      "name": "connectionPoolMaxTotal",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties",
+      "defaultValue": "18"
+    },
+    {
+      "name": "connectionPoolMaxIdle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties",
+      "defaultValue": "18"
+    },
+    {
+      "name": "connectionPoolMinIdle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties",
+      "defaultValue": "2"
+    },
+    {
+      "name": "nginxServers",
+      "type": "java.lang.String",
+      "sourceType": "com.bluemiaomiao.properties.FastdfsProperties"
+    }
+  ],
+  "hints": [
+    {
+      "name": "http_anti_steal_token",
+      "values": [
+        {
+          "value": "false"
+        },
+        {
+          "value": "true"
+        }
+      ]
+    }
+  ]
+}
