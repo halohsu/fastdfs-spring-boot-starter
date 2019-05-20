@@ -23,6 +23,8 @@ FastDFS Java Client(for SpringBoot1.x & SpringBoot 2.x).
 
     ```bash
     mvn clean install
+    mvn source:jar install
+    mvn javadoc:jar install
     ```
     
 * Add to project.
@@ -84,3 +86,39 @@ FastDFS Java Client(for SpringBoot1.x & SpringBoot 2.x).
     ```
     
 * Enjoy it.
+
+    ```java
+    @Autowired
+    private FastdfsClientService remoteService;
+    
+    // Upload File
+    String[] remoteInfo;
+    try {
+        remoteInfo = remoteService.autoUpload(image.getBytes(), type);
+        log.info("上传的服务器分组: " + remoteInfo[0]);
+        log.info("上传的服务器ID: " + remoteInfo[1]);
+    } catch (Exception e) {
+        log.error("Upload file error: " + e.getMessage());
+        return HttpStatus.INTERNAL_SERVER_ERROR;
+    }
+    
+    // Download File
+    String group = file.getGroup();
+    String storage = file.getStorageId();
+    String remoteFile = "Get file error.";
+    
+    try {
+        remoteFile = fastdfs.autoDownloadWithToken(group, storage, remoteAddress);
+    } catch (Exception e) {
+        log.error("Get file error: " + e.getMessage());
+    }
+    ```
+    
+    ```java
+    // If you use anti-hotlinking
+    FastdfsClientService.autoDownloadWithToken(String fileGroup, String remoteFileName, String clientIpAddress)
+    // If hotlinking is not used
+    FastdfsClientService.autoDownloadWithoutToken(String fileGroup, String remoteFileName, String clientIpAddress)
+    // upload file
+    FastdfsClientService.autoUpload(byte[] buffer, String ext)
+    ```

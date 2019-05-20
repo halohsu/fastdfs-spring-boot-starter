@@ -23,6 +23,8 @@
 
     ```bash
     mvn clean install
+    mvn source:jar install
+    mvn javadoc:jar install
     ```
     
 * 添加到项目.
@@ -84,3 +86,39 @@
     ```
     
 * 即刻享受它带来的便利.
+
+    ```java
+    @Autowired
+    private FastdfsClientService remoteService;
+
+    // 上传文件
+    String[] remoteInfo;
+    try {
+        remoteInfo = remoteService.autoUpload(image.getBytes(), type);
+        log.info("上传的服务器分组: " + remoteInfo[0]);
+        log.info("上传的服务器ID: " + remoteInfo[1]);
+    } catch (Exception e) {
+        log.error("Upload file error: " + e.getMessage());
+        return HttpStatus.INTERNAL_SERVER_ERROR;
+    }
+    
+    // 下载文件
+    String group = file.getGroup();
+    String storage = file.getStorageId();
+    String remoteFile = "Get file error.";
+    
+    try {
+        remoteFile = fastdfs.autoDownloadWithToken(group, storage, remoteAddress);
+    } catch (Exception e) {
+        log.error("Get file error: " + e.getMessage());
+    }
+    ```
+    
+    ```java
+    // 当启用防盗链机制时,需要使用该方法下载文件
+    FastdfsClientService.autoDownloadWithToken(String fileGroup, String remoteFileName, String clientIpAddress)
+    // 当没有启用防盗链机制时,需要使用该方法下载文件
+    FastdfsClientService.autoDownloadWithoutToken(String fileGroup, String remoteFileName, String clientIpAddress)
+    // 上传文件的方法
+    FastdfsClientService.autoUpload(byte[] buffer, String ext)
+    ```
