@@ -4,9 +4,9 @@
  * General Public License (LGPL).
  */
 
-package com.bluemiaomiao.annotation;
+package io.github.bluemiaomiao.annotation;
 
-import com.bluemiaomiao.autoconfiguration.FastdfsAutoConfiguration;
+import io.github.bluemiaomiao.autoconfiguration.FastdfsAutoConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;

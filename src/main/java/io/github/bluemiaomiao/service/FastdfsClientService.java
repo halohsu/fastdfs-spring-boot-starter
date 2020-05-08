@@ -7,14 +7,14 @@
  * 可以直接调用方法，直接返回文件请求地址
  */
 
-package com.bluemiaomiao.service;
+package io.github.bluemiaomiao.service;
 
-import com.bluemiaomiao.factory.StorageClientFactory;
+import io.github.bluemiaomiao.factory.StorageClientFactory;
+import io.github.bluemiaomiao.properties.FastdfsProperties;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.csource.common.NameValuePair;
 import org.csource.fastdfs.*;
-import com.bluemiaomiao.properties.FastdfsProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

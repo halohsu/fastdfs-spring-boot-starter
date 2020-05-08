@@ -4,7 +4,7 @@
  * General Public License (LGPL).
  */
 
-package com.bluemiaomiao.properties;
+package io.github.bluemiaomiao.properties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "fastdfs")

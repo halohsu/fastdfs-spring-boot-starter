@@ -4,10 +4,10 @@
  * General Public License (LGPL).
  */
 
-package com.bluemiaomiao.autoconfiguration;
+package io.github.bluemiaomiao.autoconfiguration;
 
-import com.bluemiaomiao.properties.FastdfsProperties;
-import com.bluemiaomiao.service.FastdfsClientService;
+import io.github.bluemiaomiao.properties.FastdfsProperties;
+import io.github.bluemiaomiao.service.FastdfsClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

@@ -1,4 +1,4 @@
-package com.bluemiaomiao.factory;
+package io.github.bluemiaomiao.factory;
 
 import org.apache.commons.pool2.PooledObject;
 import org.apache.commons.pool2.PooledObjectFactory;
