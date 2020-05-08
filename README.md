@@ -2,12 +2,6 @@
 
 一个同时兼容SpringBoot1.x和2.x的高性能FastDFS客户端。避免手动引入jar包导致项目混乱，提供常用的API，有助于快速上手开发。
 
-<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="Star bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
-<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=fork&count=true" frameborder="0" scrolling="0" width="150" height="20" title="Fork bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
-<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="150" height="20" title="Watch bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
-
-# 一、特性
-
 - 自动添加依赖
 - 初始化配置项
 - 基于Commons Pool2 实现的高性能连接池
@@ -15,7 +9,7 @@
 - 支持多Tracker多Storage多NGINX负载均衡模式
 - 基于fastdfs-client-java(1.29-SNAPSHOT)源代码构建
 
-# 二、快速开始
+# 一、快速开始
 
 ## （1）使用Maven
 
@@ -33,7 +27,7 @@
 compile group: 'io.github.bluemiaomiao', name: 'fastdfs-spring-boot-starter', version: '1.0.1-RELEASE'
 ```
 
-# 三、手动编译 
+# 二、手动编译 
 
 ## （1）克隆整个仓库
 

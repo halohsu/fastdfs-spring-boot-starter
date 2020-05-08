@@ -2,10 +2,6 @@
 
 A high-performance fastdfs client compatible with both springboot1. X and 2. X. To avoid the confusion caused by manual introduction of jar package, provide common API, which is helpful for rapid development.
 
-<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="Star bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
-<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=fork&count=true" frameborder="0" scrolling="0" width="150" height="20" title="Fork bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
-<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="150" height="20" title="Watch bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
-
 - Import dependence
 - Initial configuration
 - Connection pool
