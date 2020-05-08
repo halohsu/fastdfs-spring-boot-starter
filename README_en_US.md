@@ -1,124 +1,146 @@
 # fastdfs-spring-boot-starter
 
-FastDFS Java Client(for SpringBoot1.x & SpringBoot 2.x).
+A high-performance fastdfs client compatible with both springboot1. X and 2. X. To avoid the confusion caused by manual introduction of jar package, provide common API, which is helpful for rapid development.
 
-* Import dependence
+<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="Star bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
+<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=fork&count=true" frameborder="0" scrolling="0" width="150" height="20" title="Fork bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
+<iframe src="https://ghbtns.com/github-btn.html?user=bluemiaomiao&repo=fastdfs-spring-boot-starter&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="150" height="20" title="Watch bluemiaomiao/fastdfs-spring-boot-starter on GitHub"></iframe>
 
-* Initial configuration
+- Import dependence
+- Initial configuration
+- Connection pool
+- More method
+- Support multi tracker, multi storage, multi nginx load balancing mode
+- Based on fastdfs client Java (1.29 snapshot) source code construction
 
-* Connection pool
+# I. Quick start
 
-* More method
+## (1) Use Maven
 
-# Quick start
+```xml
+<dependency>
+    <groupId>io.github.bluemiaomiao</groupId>
+    <artifactId>fastdfs-spring-boot-starter</artifactId>
+    <version>1.0.1-RELEASE</version>
+</dependency>
+```
 
-* Download.
+## (2) Use Gradle
 
-    ```bash
-    git clone https://github.com/bluemiaomiao/fastdfs-spring-boot-starter.git
-    cd fastdfs-spring-boot-starter
-    ```
+```groovy
+compile group: 'io.github.bluemiaomiao', name: 'fastdfs-spring-boot-starter', version: '1.0.1-RELEASE'
+```
 
-* Install to local repository.
+# II. Build from source
 
-    ```bash
-    mvn clean install
-    mvn source:jar install
-    mvn javadoc:jar install
-    ```
+## (1) Download
+
+```bash
+git clone https://github.com/bluemiaomiao/fastdfs-spring-boot-starter.git
+cd fastdfs-spring-boot-starter
+```
+
+## (2) Install to local repository
+
+```bash
+mvn clean install
+mvn source:jar install
+mvn javadoc:jar install
+```
     
-* Add to project.
+## (3) Add to project
 
-    ```xml
-    <dependency>
-        <groupId>com.bluemiaomiao</groupId>
-        <artifactId>fastdfs-spring-boot-starter</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
-    ```
+```xml
+<dependency>
+    <groupId>io.github.bluemiaomiao</groupId>
+    <artifactId>fastdfs-spring-boot-starter</artifactId>
+    <version>1.0.1-RELEASE</version>
+</dependency>
+```
 
-* Add annotations and service (``@EnableFastdfsClient``).
+## (4) Add annotations and service (``@EnableFastdfsClient``).
 
-    ```java
-    @EnableFastdfsClient
-    @SpringBootApplication
-    public class DemoApplication {
-    
-        @Autowired
-        private FastdfsClientService fastdfsClientService;
-    
-        public static void main(String[] args) {
-            SpringApplication.run(DemoApplication.class, args);
-        }
-    }
-    ```
-* Add configuration entries(application.properties).
+```java
+@EnableFastdfsClient
+@SpringBootApplication
+public class DemoApplication {
 
-    ```properties
-    fastdfs.nginx-servers=192.168.80.2:8000,192.168.80.3:8000,192.168.80.4:8000
-    fastdfs.tracker-servers=192.168.80.2:22122,192.168.80.3:22122,192.168.80.4:22122
-    fastdfs.http-secret-key=2scPwMPctXhbLVOYB0jyuyQzytOofmFCBIYe65n56PPYVWrntxzLIDbPdvDDLJM8QHhKxSGWTcr+9VdG3yptkw
-    fastdfs.http-anti-steal-token=true
-    fastdfs.http-tracker-http-port=8080
-    fastdfs.network-timeout=30
-    fastdfs.connect-timeout=5
-    fastdfs.connection-pool-max-idle=18
-    fastdfs.connection-pool-min-idle=2
-    fastdfs.connection-pool-max-total=18
-    fastdfs.charset=UTF-8
-    ```
-
-* Add configuration entries(application.yml).
-
-    ```yaml
-    fastdfs:
-      charset: UTF-8
-      connect-timeout: 5
-      http-secret-key: 2scPwMPctXhbLVOYB0jyuyQzytOofmFCBIYe65n56PPYVWrntxzLIDbPdvDDLJM8QHhKxSGWTcr+9VdG3yptkw
-      network-timeout: 30
-      http-anti-steal-token: true
-      http-tracker-http-port: 8080
-      connection-pool-max-idle: 20
-      connection-pool-max-total: 20
-      connection-pool-min-idle: 2
-      nginx-servers: 192.168.80.2:8000,192.168.80.3:8000,192.168.80.4:8000
-      tracker-servers: 192.168.80.2:22122,192.168.80.3:22122,192.168.80.4:22122
-    ```
-    
-* Enjoy it.
-
-    ```java
     @Autowired
-    private FastdfsClientService remoteService;
-    
-    // Upload File
-    String[] remoteInfo;
-    try {
-        remoteInfo = remoteService.autoUpload(image.getBytes(), type);
-        log.info("上传的服务器分组: " + remoteInfo[0]);
-        log.info("上传的服务器ID: " + remoteInfo[1]);
-    } catch (Exception e) {
-        log.error("Upload file error: " + e.getMessage());
-        return HttpStatus.INTERNAL_SERVER_ERROR;
+    private FastdfsClientService fastdfsClientService;
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
     }
+}
+```
+
+## (5) Add configuration entries(application.properties).
+
+```properties
+fastdfs.nginx-servers=192.168.80.2:8000,192.168.80.3:8000,192.168.80.4:8000
+fastdfs.tracker-servers=192.168.80.2:22122,192.168.80.3:22122,192.168.80.4:22122
+fastdfs.http-secret-key=your key
+fastdfs.http-anti-steal-token=true
+fastdfs.http-tracker-http-port=8080
+fastdfs.network-timeout=30
+fastdfs.connect-timeout=5
+fastdfs.connection-pool-max-idle=18
+fastdfs.connection-pool-min-idle=2
+fastdfs.connection-pool-max-total=18
+fastdfs.charset=UTF-8
+```
+
+## (6) Add configuration entries(application.yml).
+
+```yaml
+fastdfs:
+  charset: UTF-8
+  connect-timeout: 5
+  http-secret-key: your key
+  network-timeout: 30
+  http-anti-steal-token: true
+  http-tracker-http-port: 8080
+  connection-pool-max-idle: 20
+  connection-pool-max-total: 20
+  connection-pool-min-idle: 2
+  nginx-servers: 192.168.80.2:8000,192.168.80.3:8000,192.168.80.4:8000
+  tracker-servers: 192.168.80.2:22122,192.168.80.3:22122,192.168.80.4:22122
+```
     
-    // Download File
-    String group = file.getGroup();
-    String storage = file.getStorageId();
-    String remoteFile = "Get file error.";
-    
-    try {
-        remoteFile = fastdfs.autoDownloadWithToken(group, storage, remoteAddress);
-    } catch (Exception e) {
-        log.error("Get file error: " + e.getMessage());
-    }
-    ```
-    
-    ```java
-    // If you use anti-hotlinking
-    FastdfsClientService.autoDownloadWithToken(String fileGroup, String remoteFileName, String clientIpAddress)
-    // If hotlinking is not used
-    FastdfsClientService.autoDownloadWithoutToken(String fileGroup, String remoteFileName, String clientIpAddress)
-    // upload file
-    FastdfsClientService.autoUpload(byte[] buffer, String ext)
-    ```
+## (7) Enjoy it.
+
+```java
+@Autowired
+private FastdfsClientService remoteService;
+
+// Upload File
+String[] remoteInfo;
+try {
+    remoteInfo = remoteService.autoUpload(image.getBytes(), type);
+    log.info("File Server Group: " + remoteInfo[0]);
+    log.info("File Server ID: " + remoteInfo[1]);
+} catch (Exception e) {
+    log.error("Upload file error: " + e.getMessage());
+    return HttpStatus.INTERNAL_SERVER_ERROR;
+}
+
+// Download File
+String group = file.getGroup();
+String storage = file.getStorageId();
+String remoteFile = "Get file error.";
+
+try {
+    remoteFile = fastdfs.autoDownloadWithToken(group, storage, remoteAddress);
+} catch (Exception e) {
+    log.error("Get file error: " + e.getMessage());
+}
+```
+
+```java
+// If you use anti-hotlinking
+FastdfsClientService.autoDownloadWithToken(String fileGroup, String remoteFileName, String clientIpAddress)
+// If hotlinking is not used
+FastdfsClientService.autoDownloadWithoutToken(String fileGroup, String remoteFileName, String clientIpAddress)
+// upload file
+FastdfsClientService.autoUpload(byte[] buffer, String ext)
+```
