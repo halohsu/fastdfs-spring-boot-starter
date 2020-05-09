@@ -24,7 +24,7 @@
 ## （2）使用Gradle
 
 ```groovy
-compile group: 'io.github.bluemiaomiao', name: 'fastdfs-spring-boot-starter', version: '1.0.1-RELEASE'
+compile group: 'io.github.bluemiaomiao', name: 'fastdfs-spring-boot-starter', version: '2.0.0-RELEASE'
 ```
 
 # 二、手动编译 

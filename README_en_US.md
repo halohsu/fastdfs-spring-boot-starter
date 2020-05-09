@@ -24,7 +24,7 @@ A high-performance fastdfs client compatible with both springboot1. X and 2. X. 
 ## (2) Use Gradle
 
 ```groovy
-compile group: 'io.github.bluemiaomiao', name: 'fastdfs-spring-boot-starter', version: '1.0.1-RELEASE'
+compile group: 'io.github.bluemiaomiao', name: 'fastdfs-spring-boot-starter', version: '2.0.0-RELEASE'
 ```
 
 # II. Build from source
