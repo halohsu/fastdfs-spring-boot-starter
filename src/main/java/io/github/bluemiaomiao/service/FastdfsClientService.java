@@ -153,7 +153,7 @@ public class FastdfsClientService {
             throw new Exception("You've turned on Token authentication.");
         }
         String nginx = this.getNginxServer(this.nginxServers, clientIpAddress);
-        return "http://" + nginx + fileGroup + "/" + remoteFileName;
+        return "http://" + nginx + "/" +fileGroup + "/" + remoteFileName;
     }
 
 
