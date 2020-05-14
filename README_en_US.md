@@ -17,7 +17,7 @@ A high-performance fastdfs client compatible with both springboot1. X and 2. X. 
 <dependency>
     <groupId>io.github.bluemiaomiao</groupId>
     <artifactId>fastdfs-spring-boot-starter</artifactId>
-    <version>2.0.0-RELEASE</version>
+    <version>2.0.1-RELEASE</version>
 </dependency>
 ```
 
