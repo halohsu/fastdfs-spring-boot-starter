@@ -145,3 +145,10 @@ FastdfsClientService.autoDownloadWithoutToken(String fileGroup, String remoteFil
 // upload file method
 FastdfsClientService.autoUpload(byte[] buffer, String ext)
 ```
+
+# 🌈License
+
+GNU Lesser General Public License v3.0
+
+- [⚡Home](https://www.gnu.org/licenses/lgpl-3.0.html)
+- [⚡Text Version](https://www.gnu.org/licenses/lgpl-3.0.txt)
