@@ -1,10 +1,18 @@
 # 💯fastdfs-spring-boot-starter💯
 
-[访问简体中文页面](README_zh_CN.md)
+👉最低 Java 版本: ``JDK 11 LTS`` .
 
-[Visit English Pages](README.md)
+一个与 SpringBoot 1.x/2.x 兼容的高性能 FastDFS 客户端。避免手动引入可能导致项目混乱的 jar 包，并提供常用的 API ，有助于快速开始开发。
 
 -----
+
+一些链接：
+
+- [访问简体中文页面](README_zh_CN.md)
+- [Visit English Pages](README.md)
+
+- Gitee: [https://gitee.com/bluemiaomiao/fastdfs-spring-boot-starter](https://gitee.com/bluemiaomiao/fastdfs-spring-boot-starter)
+- GitHub: [https://github.com/bluemiaomiao/fastdfs-spring-boot-starter](https://github.com/bluemiaomiao/fastdfs-spring-boot-starter)
 
 ![GitHub Release Version](https://img.shields.io/github/v/release/bluemiaomiao/fastdfs-spring-boot-starter?display_name=tag)
 ![GitHub Star](https://img.shields.io/github/stars/bluemiaomiao/fastdfs-spring-boot-starter?label=star)
@@ -15,10 +23,6 @@
 ![GitHub Download](https://img.shields.io/github/downloads/bluemiaomiao/fastdfs-spring-boot-starter/total)
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/bluemiaomiao/fastdfs-spring-boot-starter)
 ![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen)
-
-👉最低 Java 版本: ``JDK 11 LTS`` .
-
-> 一个与 SpringBoot 1.x 和 2.x 兼容的高性能 FastDFS 客户端。避免手动引入可能导致项目混乱的 jar 包，并提供常用的 API ，有助于快速开始开发。
 
 # 🥳令人惊叹的功能
 
