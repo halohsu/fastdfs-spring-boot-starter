@@ -1,17 +1,21 @@
-# fastdfs-spring-boot-starter
+# 💯fastdfs-spring-boot-starter💯
 
-A high-performance fastdfs client compatible with both springboot1. X and 2. X. To avoid the confusion caused by manual introduction of jar package, provide common API, which is helpful for rapid development.
+👉最低 Java 版本: ``JDK 11 LTS`` .
 
-- Import dependence
-- Initial configuration
-- Connection pool
-- More method
-- Support multi tracker, multi storage, multi nginx load balancing mode
-- Based on fastdfs client Java (1.29 snapshot) source code construction
+> 一个与 SpringBoot 1.x 和 2.x 兼容的高性能 FastDFS 客户端。避免手动引入可能导致项目混乱的 jar 包，并提供常用的 API ，有助于快速开始开发。
 
-# I. Quick start
+# 🥳令人惊叹的功能
 
-## (1) Use Maven
+- 👍自动添加依赖项
+- 👍初始化配置项
+- 👍基于 Commons Pool2 的高性能连接池
+- 👍更多用于操作 FastDFS 的 API
+- 👍支持多个跟踪器、多个存储和多个 NGINX 负载平衡模式
+- 👍基于 FastDFS 客户端 Java 构建源代码（1.29-SNAPSHOT）
+
+# 👊 快速开始
+
+## 🍧Maven
 
 ```xml
 <dependency>
@@ -21,30 +25,30 @@ A high-performance fastdfs client compatible with both springboot1. X and 2. X. 
 </dependency>
 ```
 
-## (2) Use Gradle
+## 🍧Gradle
 
 ```groovy
 compile group: 'io.github.bluemiaomiao', name: 'fastdfs-spring-boot-starter', version: '2.0.0-RELEASE'
 ```
 
-# II. Build from source
+# 🛠️编译
 
-## (1) Download
+## 🍭克隆
 
 ```bash
 git clone https://github.com/bluemiaomiao/fastdfs-spring-boot-starter.git
 cd fastdfs-spring-boot-starter
 ```
 
-## (2) Install to local repository
+## 🍭安装到本地
 
 ```bash
 mvn clean install
 mvn source:jar install
 mvn javadoc:jar install
 ```
-    
-## (3) Add to project
+
+## 🍭添加到项目
 
 ```xml
 <dependency>
@@ -54,7 +58,7 @@ mvn javadoc:jar install
 </dependency>
 ```
 
-## (4) Add annotations and service (``@EnableFastdfsClient``).
+## 🍭添加注解 (``@EnableFastdfsClient``)
 
 ```java
 @EnableFastdfsClient
@@ -69,8 +73,7 @@ public class DemoApplication {
     }
 }
 ```
-
-## (5) Add configuration entries(application.properties).
+## 🍭添加一些配置(application.properties)
 
 ```properties
 fastdfs.nginx-servers=192.168.80.2:8000,192.168.80.3:8000,192.168.80.4:8000
@@ -86,7 +89,7 @@ fastdfs.connection-pool-max-total=18
 fastdfs.charset=UTF-8
 ```
 
-## (6) Add configuration entries(application.yml).
+## 或者 YAML(application.yml)
 
 ```yaml
 fastdfs:
@@ -102,25 +105,25 @@ fastdfs:
   nginx-servers: 192.168.80.2:8000,192.168.80.3:8000,192.168.80.4:8000
   tracker-servers: 192.168.80.2:22122,192.168.80.3:22122,192.168.80.4:22122
 ```
-    
-## (7) Enjoy it.
+
+## 🍭享受吧
 
 ```java
 @Autowired
 private FastdfsClientService remoteService;
 
-// Upload File
+// Upload file
 String[] remoteInfo;
 try {
     remoteInfo = remoteService.autoUpload(image.getBytes(), type);
-    log.info("File Server Group: " + remoteInfo[0]);
-    log.info("File Server ID: " + remoteInfo[1]);
+    log.info("Server Group: " + remoteInfo[0]);
+    log.info("Server ID: " + remoteInfo[1]);
 } catch (Exception e) {
     log.error("Upload file error: " + e.getMessage());
     return HttpStatus.INTERNAL_SERVER_ERROR;
 }
 
-// Download File
+// Download file
 String group = file.getGroup();
 String storage = file.getStorageId();
 String remoteFile = "Get file error.";
@@ -132,11 +135,20 @@ try {
 }
 ```
 
+一些特定的方法:
+
 ```java
-// If you use anti-hotlinking
+// Enable token feature
 FastdfsClientService.autoDownloadWithToken(String fileGroup, String remoteFileName, String clientIpAddress)
-// If hotlinking is not used
+// Disable token feature
 FastdfsClientService.autoDownloadWithoutToken(String fileGroup, String remoteFileName, String clientIpAddress)
-// upload file
+// upload file method
 FastdfsClientService.autoUpload(byte[] buffer, String ext)
 ```
+
+# 🌈协议与许可
+
+GNU Lesser General Public License v3.0
+
+- [⚡Home](https://www.gnu.org/licenses/lgpl-3.0.html)
+- [⚡Text Version](https://www.gnu.org/licenses/lgpl-3.0.txt)
