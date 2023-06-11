@@ -1,10 +1,18 @@
 # 💯fastdfs-spring-boot-starter💯
 
-[访问简体中文页面](README_zh_CN.md)
+👉Minimum Java version: ``JDK 11 LTS`` .
 
-[Visit English Pages](README.md)
+A high-performance FastDFS client that is compatible with both SpringBoot1.x and 2.x. Avoiding manual introduction of jar packages that can lead to project confusion and providing commonly used APIs helps to quickly get started with development.
 
 -----
+
+Some links:
+
+- [访问简体中文页面](README_zh_CN.md)
+- [Visit English Pages](README.md)
+
+- Gitee: [https://gitee.com/bluemiaomiao/fastdfs-spring-boot-starter](https://gitee.com/bluemiaomiao/fastdfs-spring-boot-starter)
+- GitHub: [https://github.com/bluemiaomiao/fastdfs-spring-boot-starter](https://github.com/bluemiaomiao/fastdfs-spring-boot-starter)
 
 ![GitHub Release Version](https://img.shields.io/github/v/release/bluemiaomiao/fastdfs-spring-boot-starter?display_name=tag)
 ![GitHub Star](https://img.shields.io/github/stars/bluemiaomiao/fastdfs-spring-boot-starter?label=star)
@@ -16,18 +24,14 @@
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/bluemiaomiao/fastdfs-spring-boot-starter)
 ![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen)
 
-👉Minimum Java version: ``JDK 11 LTS`` .
-
-> A high-performance FastDFS client that is compatible with both SpringBoot1.x and 2.x. Avoiding manual introduction of jar packages that can lead to project confusion and providing commonly used APIs helps to quickly get started with development.
-
 # 🥳Awesome Features
 
-- 👍Automatically add dependencies
-- 👍Initialize configuration items
-- 👍High performance Connection pool based on Commons Pool2
-- 👍More APIs for manipulating FastDFS
-- 👍Supports multiple Trackers, multiple Storage, and multiple NGINX load balancing modes
-- 👍Building source code based on fastdfs client Java (1.29-SNAPSHOT)
+- 👍Automatically add dependencies.
+- 👍Initialize configuration items.
+- 👍High performance Connection pool based on Commons Pool2.
+- 👍More APIs for manipulating FastDFS.
+- 👍Supports multiple Trackers, multiple Storage, and multiple NGINX load balancing modes.
+- 👍Building source code based on fastdfs client Java (1.29-SNAPSHOT).
 
 # 👊Get Stared
 
