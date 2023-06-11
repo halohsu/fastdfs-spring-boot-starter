@@ -1,5 +1,7 @@
 # 💯fastdfs-spring-boot-starter💯
 
+[简体中文](README_zh_CN.md) | [English](README.md)
+
 👉Minimum Java version: ``JDK 11 LTS`` .
 
 > A high-performance FastDFS client that is compatible with both SpringBoot1.x and 2.x. Avoiding manual introduction of jar packages that can lead to project confusion and providing commonly used APIs helps to quickly get started with development.
