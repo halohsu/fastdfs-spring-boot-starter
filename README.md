@@ -1,6 +1,20 @@
 # 💯fastdfs-spring-boot-starter💯
 
-[简体中文](README_zh_CN.md) | [English](README.md)
+[访问简体中文页面](README_zh_CN.md)
+
+[Visit English Pages](README.md)
+
+-----
+
+![GitHub Release Version](https://img.shields.io/github/v/release/bluemiaomiao/fastdfs-spring-boot-starter?display_name=tag)
+![GitHub Star](https://img.shields.io/github/stars/bluemiaomiao/fastdfs-spring-boot-starter?label=star)
+![GitHub Fork](https://img.shields.io/github/forks/bluemiaomiao/fastdfs-spring-boot-starter?label=fork)
+
+![GitHub License](https://img.shields.io/github/license/bluemiaomiao/fastdfs-spring-boot-starter)
+![GitHub Issues](https://img.shields.io/github/issues/bluemiaomiao/fastdfs-spring-boot-starter)
+![GitHub Download](https://img.shields.io/github/downloads/bluemiaomiao/fastdfs-spring-boot-starter/total)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/bluemiaomiao/fastdfs-spring-boot-starter)
+![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen)
 
 👉Minimum Java version: ``JDK 11 LTS`` .
 
