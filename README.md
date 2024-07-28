@@ -11,17 +11,17 @@ Some links:
 - [访问简体中文页面](README_zh_CN.md)
 - [Visit English Pages](README.md)
 
-- Gitee: [https://gitee.com/bluemiaomiao/fastdfs-spring-boot-starter](https://gitee.com/bluemiaomiao/fastdfs-spring-boot-starter)
-- GitHub: [https://github.com/bluemiaomiao/fastdfs-spring-boot-starter](https://github.com/bluemiaomiao/fastdfs-spring-boot-starter)
+- Gitee: [https://gitee.com/halohsu/fastdfs-spring-boot-starter](https://gitee.com/halohsu/fastdfs-spring-boot-starter)
+- GitHub: [https://github.com/halohsu/fastdfs-spring-boot-starter](https://github.com/halohsu/fastdfs-spring-boot-starter)
 
-![GitHub Release Version](https://img.shields.io/github/v/release/bluemiaomiao/fastdfs-spring-boot-starter?display_name=tag)
-![GitHub Star](https://img.shields.io/github/stars/bluemiaomiao/fastdfs-spring-boot-starter?label=star)
-![GitHub Fork](https://img.shields.io/github/forks/bluemiaomiao/fastdfs-spring-boot-starter?label=fork)
+![GitHub Release Version](https://img.shields.io/github/v/release/halohsu/fastdfs-spring-boot-starter?display_name=tag)
+![GitHub Star](https://img.shields.io/github/stars/halohsu/fastdfs-spring-boot-starter?label=star)
+![GitHub Fork](https://img.shields.io/github/forks/halohsu/fastdfs-spring-boot-starter?label=fork)
 
-![GitHub License](https://img.shields.io/github/license/bluemiaomiao/fastdfs-spring-boot-starter)
-![GitHub Issues](https://img.shields.io/github/issues/bluemiaomiao/fastdfs-spring-boot-starter)
-![GitHub Download](https://img.shields.io/github/downloads/bluemiaomiao/fastdfs-spring-boot-starter/total)
-![GitHub Repo Size](https://img.shields.io/github/repo-size/bluemiaomiao/fastdfs-spring-boot-starter)
+![GitHub License](https://img.shields.io/github/license/halohsu/fastdfs-spring-boot-starter)
+![GitHub Issues](https://img.shields.io/github/issues/halohsu/fastdfs-spring-boot-starter)
+![GitHub Download](https://img.shields.io/github/downloads/halohsu/fastdfs-spring-boot-starter/total)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/halohsu/fastdfs-spring-boot-starter)
 ![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen)
 
 # 🥳Awesome Features
@@ -56,7 +56,7 @@ compile group: 'io.github.bluemiaomiao', name: 'fastdfs-spring-boot-starter', ve
 ## 🍭Clone
 
 ```bash
-git clone https://github.com/bluemiaomiao/fastdfs-spring-boot-starter.git
+git clone https://github.com/halohsu/fastdfs-spring-boot-starter.git
 cd fastdfs-spring-boot-starter
 ```
 
